@@ -1,4 +1,4 @@
-module.exports = function () {
+module.exports = () => {
 	const connections = {
 		default: process.env.DB_CLIENT || 'mysql',
 		mysql: {
