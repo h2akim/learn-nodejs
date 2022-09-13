@@ -1,5 +1,5 @@
-const comments = require('@controllers/comments')
+const comment = require('@controllers/comment')
 
 module.exports = (app) => {
-	app.get('/', comments.index);
+	app.get('/', comment.index);
 }
