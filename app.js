@@ -4,6 +4,9 @@ const express = require('express');
 
 const app = express();
 
+/** Load routes **/
+require('./routes/routes')(app);
+
 app.listen(process.env.PORT, (error) => {
 	if (!error) {
 		console.log('Running server on port: '+process.env.PORT);
