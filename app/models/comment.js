@@ -4,10 +4,10 @@ const name = require('path').parse(__filename).name;
 
 require('@models/user');
 
-const model = require('@load/models')(name, {
+const comment = require('./base')(name, {
 	user() {
 		return this.belongsTo('User')
 	}
 });
 
-module.exports = bookshelf.model(toPascalCase(name), model);
+module.exports = bookshelf.model(toPascalCase(name), comment);
