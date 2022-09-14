@@ -4,9 +4,13 @@ const express = require('express');
 
 const app = express();
 
+/** Serve static files */
+app.use('/assets', express.static('static'))
+
+/** Loaders  **/
 require('./loader');
 
-/** Load routes **/
+/** routes **/
 require('./routes/routes')(app);
 
 app.listen(process.env.PORT, (error) => {
