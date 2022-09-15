@@ -3,7 +3,7 @@ const index = (async (req, res) => {
 	res.send("Testing");
 });
 
-const create = ((req, res) => {
+const store = ((req, res) => {
 	//
 });
 
@@ -17,7 +17,7 @@ const destroy = ((req, res) => {
 
 module.exports = {
 	index,
-	create,
+	store,
 	update,
 	destroy
 };
