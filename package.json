@@ -24,8 +24,8 @@
     "@load": "app/loaders",
     "@database": "database",
     "@config": "config",
-    "@controllers": "app/controllers",
-    "@models": "app/models"
+    "@models": "app/models",
+    "@controllers": "app/controllers"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
