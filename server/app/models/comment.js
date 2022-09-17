@@ -7,6 +7,9 @@ require('@models/user');
 const comment = require('./base')(name, {
 	user() {
 		return this.belongsTo('User')
+	},
+	replies() {
+		return this.hasMany('Comment', 'parent_id', 'id');
 	}
 });
 
