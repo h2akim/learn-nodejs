@@ -1,6 +1,11 @@
+const Comment = require('@models/comment');
+
 const index = (async (req, res) => {
-	res.status(200);
-	res.send("Testing");
+	const comment = await Comment.fetchAll({
+		withRelated: ['user']
+	})
+
+	res.json(comment);
 });
 
 const store = ((req, res) => {

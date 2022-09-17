@@ -1,4 +1,3 @@
-require('dotenv').config();
 require('./loader');
 const database = require('./config/database')();
 
