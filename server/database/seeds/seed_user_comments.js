@@ -23,10 +23,13 @@ const generateComments = async () => {
   let selectedUsers = _.sampleSize(sampleSize, 5);
   let comments = [];
   for (let userId in selectedUsers) {
-    comment = faker.lorem.sentence();
+    const timestamp = new Date(Date.now());
+    let comment = faker.lorem.sentence();
     comments.push({
       user_id: selectedUsers[userId],
-      comment: comment
+      comment: comment,
+      created_at: timestamp,
+      updated_at: timestamp,
     });
   }
   return comments;
