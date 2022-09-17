@@ -9,6 +9,9 @@
     "db:seed": "knex seed:run --knexfile=server/knexfile.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "ghosty": "./server/core/cli/ghosty.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,12 +21,14 @@
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
     "express-route-grouping": "^1.1.1",
+    "handlebars": "^4.7.7",
     "js-convert-case": "^4.2.0",
     "knex": "^2.3.0",
     "lodash": "^4.17.21",
     "module-alias": "^2.2.2",
     "mysql": "^2.18.1",
-    "pluralize": "^8.0.0"
+    "pluralize": "^8.0.0",
+    "yargs": "^17.5.1"
   },
   "_moduleAliases": {
     "@load": "server/core/loaders",
