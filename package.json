@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon server/app.js",
-    "db:migrate": "knex migrate:latest",
+    "db:migrate": "knex migrate:latest --knexfile=server/knexfile.js",
     "db:seed": "knex seed:run --knexfile=server/knexfile.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
