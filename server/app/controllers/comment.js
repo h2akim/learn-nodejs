@@ -1,3 +1,4 @@
+/** Comment Controller */
 const Comment = require('@models/comment');
 
 const index = (async (req, res) => {
