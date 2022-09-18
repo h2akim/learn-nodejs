@@ -1,6 +1,6 @@
-const { faker } = require('@faker-js/faker');
-const _ = require('lodash');
-const { knex } = require('@load/bookshelf');
+const { faker } = require("@faker-js/faker");
+const _ = require("lodash");
+const { knex } = require("@load/bookshelf");
 
 const generateUser = () => {
   let users = [];
@@ -15,10 +15,10 @@ const generateUser = () => {
     });
   }
   return users;
-}
+};
 
 const generateComments = async () => {
-  let users = await knex.table('users').pluck('id');
+  let users = await knex.table("users").pluck("id");
   let sampleSize = _.flatten(users);
   let selectedUsers = _.sampleSize(sampleSize, 5);
   let comments = [];
@@ -33,21 +33,19 @@ const generateComments = async () => {
     });
   }
   return comments;
-}
+};
 
 /**
  * @param { import("knex").Knex } knex
- * @returns { Promise<void> } 
+ * @returns { Promise<void> }
  */
-exports.seed = async function(knex) {
-
+exports.seed = async function (knex) {
   // Users
-  await knex('users').del();
-  await knex('users').insert(generateUser());
+  await knex("users").del();
+  await knex("users").insert(generateUser());
 
   // Comments
-  await knex('comments').del();
+  await knex("comments").del();
   const comments = await generateComments();
-  await knex('comments').insert(comments);
-
+  await knex("comments").insert(comments);
 };
