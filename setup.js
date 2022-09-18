@@ -14,10 +14,10 @@ const setupClient = async () => {
 };
 
 const run = async () => {
-	console.log("👻 Ghosty Setup\n");
-	console.log("🚧 Setup Ghosty Backend & Frontend...\n");
-	await setupServer();
-	await setupClient();
-}
+  console.log("👻 Ghosty Setup\n");
+  console.log("🚧 Setup Ghosty Backend & Frontend...\n");
+  await setupServer();
+  await setupClient();
+};
 
 run();
