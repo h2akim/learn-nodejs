@@ -1,14 +1,12 @@
+require('module-alias/register');
 const _ = require('lodash');
 const path = require('path');
-
-/** dot env */
-const env = _.endsWith(process.cwd(), '/server') ? path.resolve(process.cwd(), '.env') : path.resolve(process.cwd(), 'server/.env');
-require('dotenv').config({
-	'path': env
-});
-
-/** module alias */
-require('module-alias/register');
+const config = require('@config/general');
 
 /** Load ORM */
 require('@load/bookshelf');
+
+/** dot env */
+require('dotenv').config({
+	'path': config.env_file
+});
