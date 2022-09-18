@@ -6,12 +6,12 @@ module.exports = async () => {
 	const knexFile = config.knex_file;
 	exec(`knex seed:run --knexfile=${knexFile}`, (error, stdout, stderr) => {
 		if (error) {
-			console.log(`Failed to seed database: ${error.message}`);
+			console.log(`🛑 Failed to seed database: ${error.message}`);
 			return;
 		}
 
 		if (stderr) {
-			console.log(`Failed to seed database: ${stderr}`);
+			console.log(`🛑 Failed to seed database: ${stderr}`);
 			return;
 		}
 

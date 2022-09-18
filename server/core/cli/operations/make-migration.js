@@ -14,12 +14,12 @@ module.exports = async (args) => {
 	const migrationName = args[0];
 	exec(`knex migrate:make ${migrationName} --knexfile=${knexFile}`, (error, stdout, stderr) => {
 		if (error) {
-			console.log(`Failed to create migration file: ${error.message}`);
+			console.log(`🛑 Failed to create migration file: ${error.message}`);
 			return;
 		}
 
 		if (stderr) {
-			console.log(`Failed to create migration file: ${stderr}`);
+			console.log(`🛑 Failed to create migration file: ${stderr}`);
 			return;
 		}
 

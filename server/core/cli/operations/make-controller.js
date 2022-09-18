@@ -34,7 +34,7 @@ module.exports = async (args) => {
 		console.log(`✅ Succesfully created new controller - ${controllerName}.js`);
 	} catch (e) {
 		if (e.code === 'ENOENT') {
-			console.error('Failed to read template file / not exists');
+			console.error('🛑 Failed to read template file / not exists');
 		}
 	}
 }
