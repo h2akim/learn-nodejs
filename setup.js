@@ -2,7 +2,7 @@
 const { exec } = require("child_process");
 
 const setupServer = async () => {
-  await exec("yarn install", (error, stdout, stderr) => {
+  await exec("yarn install && yarn link", (error, stdout, stderr) => {
     console.log(stdout);
   });
 };
