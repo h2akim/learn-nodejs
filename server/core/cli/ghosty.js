@@ -1,5 +1,9 @@
 #! /usr/bin/env node
 require('module-alias/register');
+const config = require('@config/general')
+require('dotenv').config({
+	'path': config.env_file
+});
 const _ = require("lodash");
 var clc = require("cli-color");
 
