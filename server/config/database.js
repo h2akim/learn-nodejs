@@ -1,14 +1,17 @@
+require('module-alias/register');
+const config = require('@config/general');
+
 const defaultConfigurations = {
 	pool: {
 		min: 2,
 		max: 10
 	},
 	migrations: {
-		directory: './database/migrations',
+		directory: config.migration_directory,
 		tableName: 'migrations'
 	},
 	seeds: {
-        directory: './database/seeds'
+        directory: config.seed_directory
     }
 };
 

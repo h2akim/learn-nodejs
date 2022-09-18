@@ -1,9 +1,13 @@
 #! /usr/bin/env node
-const yargs = require("yargs");
+require('module-alias/register');
+
 let args = process.argv.slice(2);
 const operationMapping = {
-	'make:model': './operations/create-model.js',
-	'make:controller': './operations/create-controller.js',
+	'make:model': './operations/make-model.js',
+	'make:controller': './operations/make-controller.js',
+	'make:migration': './operations/make-migration.js',
+	'db:migrate': './operations/db-migrate.js',
+	'db:seed': './operations/db-seed.js',
 };
 
 const operation = args.shift();
