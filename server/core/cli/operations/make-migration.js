@@ -10,7 +10,7 @@ module.exports = async (args) => {
     return;
   }
 
-  const knexFile = path.resolve(process.cwd() + "/server/knexfile.js");
+  const knexFile = config.knex_file;
   const migrationName = args[0];
   exec(
     `knex migrate:make ${migrationName} --knexfile=${knexFile}`,

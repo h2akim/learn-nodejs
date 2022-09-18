@@ -3,6 +3,7 @@ const fs = require("fs/promises");
 const path = require("path");
 const handlebars = require("handlebars");
 const { toPascalCase } = require("js-convert-case");
+const config = require("@config/general");
 
 module.exports = async (args) => {
   if (_.isEmpty(args)) {
@@ -14,7 +15,7 @@ module.exports = async (args) => {
   try {
     const existingFile = await fs.stat(
       path.resolve(
-        process.cwd() + `/server/app/controllers/${controllerName}.js`
+        config.controller_directory + `/${controllerName}.js`
       )
     );
     if (existingFile) {
@@ -29,7 +30,7 @@ module.exports = async (args) => {
 
   try {
     const sourceFile = await fs.readFile(
-      path.resolve(process.cwd() + "/server/core/cli/stubs/controller.stub")
+      path.resolve(config.stub_directory + "/controller.stub")
     );
     const templateString = sourceFile.toString();
     const template = handlebars.compile(templateString);
@@ -40,7 +41,7 @@ module.exports = async (args) => {
     // write file
     await fs.writeFile(
       path.resolve(
-        process.cwd() + `/server/app/controllers/${controllerName}.js`
+        config.controller_directory + `/${controllerName}.js`
       ),
       contents
     );

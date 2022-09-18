@@ -2,6 +2,7 @@ const _ = require("lodash");
 const fs = require("fs/promises");
 const path = require("path");
 const handlebars = require("handlebars");
+const config = require("@config/general");
 
 module.exports = async (args) => {
   if (_.isEmpty(args)) {
@@ -12,7 +13,7 @@ module.exports = async (args) => {
   const modelName = args[0];
   try {
     const existingFile = await fs.stat(
-      path.resolve(process.cwd() + `/server/app/models/${modelName}.js`)
+      path.resolve(config.model_directory + `/${modelName}.js`)
     );
     if (existingFile) {
       console.error(`🛑 Oops! Model ${modelName}.js is already exists`);
@@ -24,7 +25,7 @@ module.exports = async (args) => {
 
   try {
     const sourceFile = await fs.readFile(
-      path.resolve(process.cwd() + "/server/core/cli/stubs/model.stub")
+      path.resolve(config.stub_directory + "/model.stub")
     );
     const templateString = sourceFile.toString();
     const template = handlebars.compile(templateString);
@@ -34,7 +35,7 @@ module.exports = async (args) => {
 
     // write file
     await fs.writeFile(
-      path.resolve(process.cwd() + `/server/app/models/${modelName}.js`),
+      path.resolve(config.model_directory + `/${modelName}.js`),
       contents
     );
     console.log(`✅ Succesfully created new model - ${modelName}.js`);
