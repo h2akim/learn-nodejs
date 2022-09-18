@@ -1,6 +1,5 @@
 #! /usr/bin/env node
 const { exec } = require("child_process");
-var clc = require("cli-color");
 
 const setupServer = async () => {
   await exec("yarn install && yarn link", (error, stdout, stderr) => {
@@ -15,10 +14,8 @@ const setupClient = async () => {
 };
 
 const run = async () => {
-  const setupTitle = clc.xterm(39);
-	console.log(setupTitle("👻 Ghosty Setup\n"));
-  const setupSubtitle = clc.xterm(198);
-	console.log(setupSubtitle("🚧 Setup Ghosty Backend & Frontend...\n"));
+	console.log("👻 Ghosty Setup\n");
+	console.log("🚧 Setup Ghosty Backend & Frontend...\n");
 	await setupServer();
 	await setupClient();
 }
