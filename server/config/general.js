@@ -10,6 +10,6 @@ module.exports = {
   migration_directory: path.resolve(server + "/database/migrations"),
   seed_directory: path.resolve(server + "/database/seeds"),
 	model_directory: path.resolve(server + "/app/models"),
-	controllers_directory: path.resolve(server + "/app/controllers"),
+	controller_directory: path.resolve(server + "/app/controllers"),
 	stub_directory: path.resolve(server + "/core/cli/stubs")
 };
