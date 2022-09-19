@@ -5,7 +5,7 @@ const name = require("path").parse(__filename).name;
 require("@models/user");
 require("@models/comment");
 
-const upvote = require("@load/models")(name, {
+const upvote = require("./base")(name, {
   user() {
     return this.belongsTo("User");
   },
