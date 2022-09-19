@@ -26,9 +26,9 @@ const run = () => {
   console.log("👻 Ghosty Setup\n");
   console.log("🚧 Pulling Submodules...\n");
   pullSubmodules();
-  console.log("🚧 Setup Ghosty Backend...\n");
+  console.log("\n🚧 Setup Ghosty Backend...\n");
   setupServer();
-  console.log("🚧 Setup Ghosty Frontend...\n");
+  console.log("\n🚧 Setup Ghosty Frontend...\n");
   setupClient();
 };
 
