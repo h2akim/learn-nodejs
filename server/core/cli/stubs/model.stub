@@ -2,7 +2,7 @@ const { toPascalCase } = require('js-convert-case');
 const bookshelf = require('@load/bookshelf');
 const name = require('path').parse(__filename).name;
 
-const {{modelName}} = require('@load/models')(name, {
+const {{modelName}} = require('./base')(name, {
 	// knex.js extends
 });
 
