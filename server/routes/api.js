@@ -14,6 +14,7 @@ module.exports = (app) => {
 
   /** User */
   app.get("/api/user", UserController.getFirstUser);
+	app.get("/api/user/random", UserController.getRandomizeUser);
 
   /** Events */
   app.get("/api/events", ...EventController.index);
