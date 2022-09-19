@@ -11,6 +11,12 @@ app.use(cors());
 /** Serve static files */
 app.use("/assets", express.static("static"));
 
+/** json */
+app.use(express.json());
+
+/** body-parser */
+app.use(require('body-parser').urlencoded({ extended: false }));
+
 /** routes **/
 require("./routes/web")(app);
 require("./routes/api")(app);
