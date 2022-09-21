@@ -13,6 +13,8 @@
 
 1. Setup MySQL credentials on `.env` based on `.env.example`
 
-2. Run `ghosty db:migrate` to migrate required tables
+2. Install knex cli `yarn global add knex`
+
+3. Run `ghosty db:migrate` to migrate required tables
  
-3. Run `ghosty db:seed` to seed testing data
+4. Run `ghosty db:seed` to seed testing data
