@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "setup": "node setup.js",
-    "dev": "nodemon server/app.js",
+    "dev": "concurrently \"nodemon server/app.js\" \"cd ./client && yarn dev\"",
+    "build": "cd ./client && yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.5.0",
+    "concurrently": "^7.4.0",
     "nodemon": "^2.0.19"
   }
 }

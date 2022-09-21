@@ -3,23 +3,17 @@ require("./loader");
 const express = require("express");
 var cors = require("cors");
 const app = express();
-require("express-route-grouping");
+const path = require('path');
 
-/** Cors */
+/** Middlewares */
 app.use(cors());
-
-/** Serve static files */
-app.use("/assets", express.static("static"));
-
-/** json */
 app.use(express.json());
-
-/** body-parser */
 app.use(require('body-parser').urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "../build")));
 
-/** routes **/
-require("./routes/web")(app);
+/** Routes **/
 require("./routes/api")(app);
+require("./routes/web")(app);
 
 app.listen(process.env.PORT, (error) => {
   if (!error) {
