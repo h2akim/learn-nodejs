@@ -14,8 +14,8 @@ const index = async (req, res) => {
           .as("upvote_count"),
       ])
       .where("parent_id", null)
-      .orderBy("created_at", "desc")
-      .orderBy("upvote_count", "desc");
+      .orderBy("upvote_count", "desc")
+      .orderBy("created_at", "desc");
   }).fetchAll({
     withRelated: ["user", "replies.user"],
   });
